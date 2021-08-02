@@ -15,6 +15,7 @@
 验证数据集&代码： 
 
 SentEval：https://github.com/princeton-nlp/SimCSE/tree/main/SentEval
+
 SentEval/data: https://huggingface.co/datasets/princeton-nlp/datasets-for-simcse/resolve/main/senteval.tar
 
 2. pre-prepare dataset:
@@ -35,10 +36,4 @@ sentence -> bert -> (cls token output embedding) -> SentEval -> correlation
 
 注意验证的时候是直接取cls token，不经过MLP层，这样的效果会更好。MLP层相当于是对比学习中的projector。
 
-训练结果为74.96，基本达到了原代码的水准（不同的初始化可能对结果有一定影响）。
-
-+-------+-------+-------+-------+-------+--------------+-----------------+-------+
-| STS12 | STS13 | STS14 | STS15 | STS16 | STSBenchmark | SICKRelatedness |  Avg. |
-+-------+-------+-------+-------+-------+--------------+-----------------+-------+
-| 68.16 | 79.49 | 71.91 | 81.08 | 76.90 |    75.82     |      71.34      | 74.96 |
-+-------+-------+-------+-------+-------+--------------+-----------------+-------+
+训练结果为Avg 74.96，基本达到了原代码的水准（不同的初始化可能对结果有一定影响）。
